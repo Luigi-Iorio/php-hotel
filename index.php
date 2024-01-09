@@ -76,9 +76,9 @@ $hotels = [
                         echo "<tr>";
                         // conversione valore booleano in stringa
                         if ($hotel["parking"] === true) { //se parcheggio è true
-                            echo $hotel["parking"] = "Yes"; //stampa la stringa yes
+                            $hotel["parking"] = "Yes"; //stampa la stringa yes
                         } else {
-                            echo $hotel["parking"] = "No"; //stampa la stringa No
+                            $hotel["parking"] = "No"; //stampa la stringa No
                         };
                         foreach ($hotel as $info) {
                             // td
