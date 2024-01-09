@@ -54,20 +54,44 @@ $hotels = [
 <body>
     <!-- header -->
     <header>
-        <h1>PHP Hotel</h1>
+        <h1 class="text-center mt-5 text-secondary">PHP Hotel</h1>
     </header>
     <!-- /header -->
     <!-- main -->
-    <main>
-        <div class="hotel">
-            <?php
-            foreach ($hotels as $hotel) {
-                foreach ($hotel as $key => $info) {
-                    echo "<div class='info'>$key: $info</div>";
-                };
-                echo "<br>";
-            };
-            ?>
+    <main class="col-12 col-md-8 mx-auto mt-4">
+        <div class="hotel border border-5 rounded-3">
+            <!-- tabella -->
+            <table class="table table-striped table-hover mb-0">
+                <thead>
+                    <tr>
+                        <?php foreach ($hotels[0] as $key => $info) {
+                            echo "<th scope='col'>$key</th>";
+                        }; ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($hotels as $hotel) {
+                        // tr
+                        echo "<tr>";
+                        // conversione valore booleano in stringa
+                        if ($hotel["parking"] === true) { //se parcheggio è true
+                            echo $hotel["parking"] = "Yes"; //stampa la stringa yes
+                        } else {
+                            echo $hotel["parking"] = "No"; //stampa la stringa No
+                        };
+                        foreach ($hotel as $info) {
+                            // td
+                            echo "<td>$info</td>";
+                            // td
+                        };
+                        echo "</tr>";
+                        // tr
+                    };
+                    ?>
+                </tbody>
+            </table>
+            <!-- /tabella -->
         </div>
     </main>
     <!-- /main -->
