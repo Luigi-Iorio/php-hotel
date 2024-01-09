@@ -55,7 +55,18 @@ $hotels = [
     </header>
     <!-- /header -->
     <!-- main -->
-    <main></main>
+    <main>
+        <div class="hotel">
+            <?php
+            foreach ($hotels as $hotel) {
+                foreach ($hotel as $key => $info) {
+                    echo "<div class='info'>$key: $info</div>";
+                };
+                echo "<br>";
+            };
+            ?>
+        </div>
+    </main>
     <!-- /main -->
 </body>
 
